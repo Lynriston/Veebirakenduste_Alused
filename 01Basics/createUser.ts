@@ -31,3 +31,10 @@ const user: User = {
 
 renderUserDetail(user)
 renderUserDetail1({name: "Nipitiri", age: 123})
+
+//omit kasutamine tähendab properti eemaldamist User typest
+function createUser(User: Omit<User, "id">){
+    console.log(User.name, User.age)
+}
+
+createUser({name: "Ironman", age: 567, address: {street: "asd", city: "asdcity"}})
