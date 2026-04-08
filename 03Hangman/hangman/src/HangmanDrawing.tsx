@@ -4,10 +4,10 @@ const HEAD = (
             width: "50px",
             height: "50px",
             borderRadius: "100%",
-            backgroundColor: "10px solid black",
+            border: "10px solid black",
             position: "absolute",
             top: "50px",
-            right: "-30xp"
+            right: "-30px"
         }}
     />
 )
@@ -28,7 +28,7 @@ const BODY = (
 const RIGHT_ARM = (
     <div
         style={{
-            width: "10px",
+            width: "100px",
             height: "10px",
             backgroundColor: "black",
             position: "absolute",
@@ -43,7 +43,7 @@ const RIGHT_ARM = (
 const LEFT_ARM = (
     <div
         style={{
-            width: "10px",
+            width: "100px",
             height: "10px",
             backgroundColor: "black",
             position: "absolute",
@@ -80,7 +80,7 @@ const LEFT_LEG = (
             top: "210px",
             right: "0px",
             rotate: "-60deg",
-            transformOrigin: "left bottom"
+            transformOrigin: "right bottom"
         }}
     />
 )
@@ -103,8 +103,8 @@ export function HangmanDrawing({numberOfGuesses}: HangmanDrawingProps){
                     width: "10px",
                     backgroundColor: "black",
                     position: "absolute",
-                    top: "0px",
-                    right: "0px"
+                    top: 0,
+                    right: 0
                 }}
             />
             <div
