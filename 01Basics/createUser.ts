@@ -1,0 +1,40 @@
+//harjutus 1
+type User = {
+    id: string
+    name: string
+    age: number
+    address: {
+        street: string
+        city: string
+    }
+}
+
+//soovin näidata ainult name ja age, aga võetakse kogu objekti sisu
+//kuna kasutatakse User type
+function renderUserDetail(user: User){
+    console.log(user.name, user.age)
+}
+
+function renderUserDetail1(user: Pick<User, "name" | "age">){
+    console.log(user.name, user.age)
+}
+
+const user: User = {
+    id: "ads",
+    name: "Kyle",
+    age: 123,
+    address: {
+        street: "sdf",
+        city: "London"
+    }
+}
+
+renderUserDetail(user)
+renderUserDetail1({name: "Nipitiri", age: 123})
+
+//omit kasutamine tähendab properti eemaldamist User typest
+function createUser(User: Omit<User, "id">){
+    console.log(User.name, User.age)
+}
+
+createUser({name: "Ironman", age: 567, address: {street: "asd", city: "asdcity"}})
